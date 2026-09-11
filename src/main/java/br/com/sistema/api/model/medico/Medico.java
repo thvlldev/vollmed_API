@@ -31,5 +31,14 @@ public class Medico {
     @Embedded // Utilizando na classe que representa a tabela principal no BD
     private Endereco endereco;
 
-    
+    // Método Construtor recebendo o DTO DadosCadastroMedico e conectando a um objeto médico
+    public Medico(DadosCadastroMedico dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.crm = dados.crm();
+        this.especialidade = dados.especialidade();
+        this.endereco = new Endereco(dados.endereco());        
+    }
+   
 }

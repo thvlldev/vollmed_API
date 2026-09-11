@@ -1,5 +1,9 @@
 package br.com.sistema.api.model.medico;
 
-public class MedicoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+
+public interface MedicoRepository extends JpaRepository<Medico, Integer>{ 
     
 }
