@@ -1,5 +1,7 @@
 package br.com.sistema.api.model.paciente;
 
-public class PacienteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PacienteRepository extends JpaRepository<Paciente, Integer>{
     
 }
