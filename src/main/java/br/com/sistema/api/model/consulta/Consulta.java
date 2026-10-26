@@ -22,10 +22,18 @@ public class Consulta {
 
     private String observacao;
 
+
+    @ManyToOne 
+    @JoinColumn(name = "pacienteId")
     private Paciente paciente;
+
+    @ManyToOne
     private Medico medico;
+
+
     private LocalDateTime data;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     // Terceiro construtor da classe Consulta que recebe a conversão do DadosAgendamentoConsulta
@@ -40,6 +48,11 @@ public class Consulta {
         this.data = dados.data();
     }
 
+    
+
 }
 
-// @ManyToOne => Relacionamento N:1 -> Muitas consultas podem ter o mesmo Médico.
+
+// @ManyToOne 
+// => Relacionamento N:1 -> Muitas consultas podem ter o mesmo Médico.
+// => Sempre o primeiro termo é referente a tabela atual, o segundo termo a tabela de referência.
